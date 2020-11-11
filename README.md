@@ -1,45 +1,32 @@
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
-Welcome gerd113,
+<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+# Polygon FA
+Polygon FA is a fictional Fund Accounting group within a large Fund Accounting department of an international administrator.
+Fund Accounting is the process of calculating a NAV (Net Asset Value) per share for an Investment Fund and publishing that price in the financial markets.
+The aim of this site is to streamline the allocation process on occasions of annual leave and illness.
+These occasions can be time consuming and cause conflict when processes are allocated to people who were not expecting them and are therefore unprepared.
+The site will allow users to see what they are allocated in advance and prepare and will also enable the planners to save time through not having to update excel spreadsheets every week. 
+Please see user stories below for specific issues.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX
 
-`python3 -m http.server`
 
-A blue button should appear to click: *Make Public*,
+* [Wireframes](https://github.com/gerd113/Polygon-FAllocation/tree/master/assets/wireframes)
 
-Another blue button should appear to click: *Open Browser*.
+### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### FA Team Leader
+As a user I need to be prepared to cover any additional funds that I may be allocated on a given day.
+I know what I will be doing everyday when everyone is in but in times of vacation or illness I will be allocated extra and I don't want to be surprosed on the day.
+I need to know those additional funds to safeguard myself and the company from costly errors and to complete them in a timely fashion.
+I aslo want to be able to easily see if any colleagues have booked vacation time as a maximum of 2 people are allowed leave at the same time. 
 
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+### FA Manager
+As a user I need to ensure that every fund is allocated to a reviewer. At the moment I use a spreadsheet which I update weekly and can take significant time when people are going to be out of office in busy holiday periods. I would like a more efficient process that removes the need for me to think about who is going to do what, if they are comfortable with it and if they require cross training.  
+Publishing an incorrect NAV can cause significant financial and reputational damage and I would like to have a tool whickh would enab;e my staff my staff to get comfortable in advance on funds where they are first and second cover. Each of them are expert at their own specific group of clients.
+I also would like to maintain the annual leave for the team online. A maximum of 2 people are allowed at the same time and I and the assistant manager cannot be off at the same time. Annual leave are currently maintained on spreadsheet and can be difficult to read. 
+Each fund will follow public holidays of a specific country/countries. Currently we monitor them manually and update the excel allocation spreadsheet when necessary. I would like to add the holidays to a tool at the start of the year perhaps and check them periodically, taking much of the manual work out of maintaing a spreadsheet application.
+To sum up I would like to have all the factors influencing the daily allocation, leave, public holidays and illness available on one intuitive tool to save time and reduce risk.
