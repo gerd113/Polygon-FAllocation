@@ -15,10 +15,10 @@
 <header>
     <nav>
         <div class="nav-wrapper green accent-4">
-            <a href="#!" class="brand-logo">Polygon FA</a>
+            <a href="{{ url_for('get_rota') }}" class="brand-logo">Polygon FA</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">dehaze</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('get_rota') }}">Home</a></li>
                 <li><a href="#">Group Info</a></li>
                 <li><a href="#">Annual Leave</a></li>
                 <li><a href="#">Public Holidays</a></li>
@@ -27,7 +27,8 @@
     </nav>
 
 	<ul class="sidenav" id="mobile-demo">
-		<li><a href="#">Home</a></li>
+    
+		<li><a href="{{ url_for('get_rota') }}">Home</a></li>
 		<li><a href="#">Group Info</a></li>
 		<li><a href="#">Annual Leave</a></li>
 		<li><a href="#">Public Holidays</a></li>
