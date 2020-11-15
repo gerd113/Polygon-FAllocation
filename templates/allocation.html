@@ -8,13 +8,29 @@
     
 
 
-    <ul class="collapsible">
-    {% for fund in rota %}
-    <li>
-      <div class="collapsible-header"><i class="material-icons"></i>{{ fund.client }} {{ fund.owner }} {{ fund.deadline }} </div>
-      <div class="collapsible-body"><span>Client Coverage: {{ fund.owner }}, {{ fund.first_cover }}, {{ fund.second_cover }}, {{ fund.third_cover }}</span></div>
-    </li>
-    {% endfor %}
-  </ul>
-
+	<ul class="collapsible">
+		{% for fund in rota %}
+		<li>
+	
+	
+			<div class="collapsible-header"><i class="material-icons"></i>{{ fund.client }} {{ fund.owner }}
+	
+				{{ fund.deadline }}
+	
+				<a class="waves-effect waves-light btn-small right-align"><i class="material-icons right">edit</i>Edit</a>
+	
+			</div>
+	
+			
+	
+	
+			<div class="collapsible-body">
+				<span>Client Coverage: {{ fund.owner }}, {{ fund.first_cover }}, {{ fund.second_cover }}, {{ fund.third_cover }}</span>
+			</div>
+		</li>
+	
+	
+	
+		{% endfor %}
+	</ul>
 {% endblock %}
