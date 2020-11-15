@@ -24,6 +24,11 @@ def get_rota():
     return render_template("tasks.html", rota=rota)
 
 
+@app.route("/add_fund")
+def add_fund():
+    return render_template("add_fund.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
