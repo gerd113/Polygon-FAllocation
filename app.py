@@ -30,11 +30,16 @@ def add_fund():
         fund = {
             "client": request.form.get("client"),
             "owner": request.form.get("owner"),
+            "fund_number": request.form.get("fund_number"),
+            "first_cover": request.form.get("first_cover"),
+            "second_cover": request.form.get("second_cover"),
+            "third_cover": request.form.get("third_cover"),
+            "contingency": request.form.get("contingency"),
             "deadline": request.form.get("deadline")
         }
         mongo.db.client_coverage.insert_one(fund)
         flash("Task Successfully Added")
-        return render_template("add_fund.html")
+        return render_template("allocation.html")
     return render_template("add_fund.html")    
 
 
