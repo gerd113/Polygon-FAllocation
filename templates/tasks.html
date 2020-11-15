@@ -5,10 +5,16 @@
 
 <input type="text" class="datepicker">
 
+    
+
+
+    <ul class="collapsible">
     {% for fund in rota %}
-        {{ fund.client }}
-        {{ fund.reviewer }}
-        {{ fund.deadline }}<br>
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>{{ fund.client }} {{ fund.reviewer }} {{ fund.deadline }} </div>
+      <div class="collapsible-body"><span>{{ fund.client }} {{ fund.reviewer }} {{ fund.deadline }}</span></div>
+    </li>
     {% endfor %}
+  </ul>
 
 {% endblock %}
