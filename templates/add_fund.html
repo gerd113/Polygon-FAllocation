@@ -5,19 +5,19 @@
 
 <!--Adapted from Materialize-->
 <div class="row">
-	<form class="col s12" method="POST" action="">
+	<form class="col s12" method="POST" action="{{ url_for('add_fund') }}">
 	
 	
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="fund name" type="text" name="fund name" class="validate">
-				<label for="fund name">Fund Name</label>
+				<input id="fund_name" type="text" name="fund_name" class="validate">
+				<label for="fund_name">Fund Name</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="fund number" name="fund number" type="number" class="validate">
-				<label for="fund number">Account Number </label>
+				<input id="fund_number" name="fund_number" type="number" class="validate">
+				<label for="fund_number">Account Number </label>
 			</div>
 		</div>
 		<div class="row">
@@ -28,20 +28,20 @@
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="first cover" name="first cover" type="text" class="validate">
-				<label for="first cover">First Cover</label>
+				<input id="first_cover" name="first_cover" type="text" class="validate">
+				<label for="first_cover">First Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="second cover" name="second cover" type="text" class="validate">
-				<label for="second cover">Second Cover</label>
+				<input id="second_cover" name="second_cover" type="text" class="validate">
+				<label for="second_cover">Second Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="third cover" name="third cover" type="text" class="validate">
-				<label for="third cover">Third Cover</label>
+				<input id="third_cover" name="third_cover" type="text" class="validate">
+				<label for="third_cover">Third Cover</label>
 			</div>
 		</div>
 		<div class="row">
@@ -62,13 +62,25 @@
 <div class="row">
     <div class="input-field col s12">
     <select>
-      <option value="">Choose your option</option>
-      <option value="1">Ireland</option>
-      <option value="2">US</option>
-      <option value="3">UK</option>
+      <option value="" name="hols_followed">Choose your option</option>
+      <option value="1" name="Ireland">Ireland</option>
+      <option value="2" name="US">US</option>
+      <option value="3" name="UK">UK</option>
     </select>
     <label>Holidays Followed</label>
   </div>
+</div>
+
+<div class="row">
+<div class="col s12  center-align">
+<button class="btn waves-effect waves-light" type="submit">Submit
+    <i class="material-icons right">send</i>
+  </button>
+
+
+</div>    
+
+
 </div>
 
 	</form>

@@ -24,9 +24,19 @@ def get_rota():
     return render_template("tasks.html", rota=rota)
 
 
-@app.route("/add_fund")
+@app.route("/add_fund", methods=["GET", "POST"])
 def add_fund():
-    return render_template("add_fund.html")
+    if request.method == "POST":
+        fund = {
+            "fund_name": request.form.get("fund_name")
+        }
+        mongo.db.client_coverage.insert_one(fund)
+        flash("Task Successfully Added")
+        return render_template("add_fund.html")
+
+    return render_template("add_fund.html")    
+
+    
 
 
 if __name__ == "__main__":
