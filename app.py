@@ -21,22 +21,21 @@ mongo = PyMongo(app)
 @app.route("/get_rota")
 def get_rota():
     rota = mongo.db.client_coverage.find()
-    return render_template("tasks.html", rota=rota)
+    return render_template("allocation.html", rota=rota)
 
 
 @app.route("/add_fund", methods=["GET", "POST"])
 def add_fund():
     if request.method == "POST":
         fund = {
-            "fund_name": request.form.get("fund_name")
+            "client": request.form.get("client"),
+            "owner": request.form.get("owner"),
+            "deadline": request.form.get("deadline")
         }
         mongo.db.client_coverage.insert_one(fund)
         flash("Task Successfully Added")
         return render_template("add_fund.html")
-
     return render_template("add_fund.html")    
-
-    
 
 
 if __name__ == "__main__":

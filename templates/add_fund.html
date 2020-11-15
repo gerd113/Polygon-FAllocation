@@ -4,10 +4,14 @@
 <h3 class="center-align">Add Fund</h3>
 
 <!--Adapted from Materialize-->
-<div class="row">
+
 	<form class="col s12" method="POST" action="{{ url_for('add_fund') }}">
-	
-	
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="client" type="text" name="client" class="validate">
+				<label for="client">Client</label>
+			</div>
+		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<input id="fund_name" type="text" name="fund_name" class="validate">
@@ -23,7 +27,7 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<input id="owner" name="owner" type="text" class="validate">
-				<label for="owner">Client Owner</label>
+				<label for="owner">Owner</label>
 			</div>
 		</div>
 		<div class="row">
@@ -51,40 +55,37 @@
 			</div>
 		</div>
 
-    <div class="row">
+		<div class="row">
 			<div class="input-field col s12">
 				<input id="deadline" name="deadline" type="time" class="validate">
 				<label for="deadline">Deadline</label>
 			</div>
 		</div>
 
-        
-<div class="row">
-    <div class="input-field col s12">
-    <select>
-      <option value="" name="hols_followed">Choose your option</option>
-      <option value="1" name="Ireland">Ireland</option>
-      <option value="2" name="US">US</option>
-      <option value="3" name="UK">UK</option>
-    </select>
-    <label>Holidays Followed</label>
-  </div>
-</div>
+		<div class="row">
+			<div class="input-field col s12">
+				                <select>
+		                        <option value="" name="hols_followed">Choose your option</option>
+		                        <option value="1" name="Ireland">Ireland</option>
+		                        <option value="2" name="US">US</option>
+		                        <option value="3" name="UK">UK</option>
+		                        </select>
+				<label>Holidays Followed</label>
+			</div>
+		</div>
 
-<div class="row">
-<div class="col s12  center-align">
-<button class="btn waves-effect waves-light" type="submit">Submit
-    <i class="material-icons right">send</i>
-  </button>
-
-
-</div>    
+		<div class="row">
+			<div class="col s12  center-align">
+				<button class="btn waves-effect waves-light" type="submit">Submit
+                    <i class="material-icons right">send</i>
+                </button>
 
 
-</div>
+			</div>
+		</div>
 
 	</form>
-</div>
+
 
 
 

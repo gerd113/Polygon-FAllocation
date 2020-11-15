@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<input type="text" class="datepicker">
+
+    
+
+
+    <ul class="collapsible">
+    {% for fund in rota %}
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>{{ fund.client }} {{ fund.owner }} {{ fund.deadline }} </div>
+      <div class="collapsible-body"><span>Client Coverage: {{ fund.owner }}, {{ fund.first_cover }}, {{ fund.second_cover }}, {{ fund.third_cover }}</span></div>
+    </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
