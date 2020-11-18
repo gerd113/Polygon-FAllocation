@@ -80,8 +80,10 @@
              <a href="{{ url_for('get_rota') }}"   class="btn waves-effect waves-light" type="submit">Cancel
                     <i class="material-icons right">cancel</i>
                     </a>
-
-				<button class="btn waves-effect waves-light" type="submit">Edit Task
+              <a href="{{ url_for('delete_fund', client_coverage_id=fund._id) }}"   class="btn waves-effect waves-light" type="submit">Delete Fund
+                    <i class="material-icons right">delete</i>
+                    </a>  
+				<button class="btn waves-effect waves-light" type="submit">Edit Fund
                     <i class="material-icons right">edit</i>
                 </button>
 

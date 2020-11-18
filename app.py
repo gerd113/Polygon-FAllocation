@@ -59,12 +59,17 @@ def edit_fund(client_coverage_id):
         mongo.db.client_coverage.update(
             {"_id": ObjectId(client_coverage_id)}, submit)
         flash("Task Successfully Updated")
-        
 
-    fund = mongo.db.client_coverage.find_one(
-        {"_id": ObjectId(client_coverage_id)})
-    return render_template(
-        "edit_fund.html", fund=fund)
+    fund = mongo.db.client_coverage.find_one({"_id": ObjectId(
+            client_coverage_id)})
+    return render_template("edit_fund.html", fund=fund)
+
+
+@app.route("/delete_fund/<client_coverage_id>")
+def delete_fund(client_coverage_id):
+    mongo.db.client_coverage.remove({"_id": ObjectId(client_coverage_id)})
+    flash("Fund successfully deleted")
+    return redirect(url_for("get_rota"))
 
 
 if __name__ == "__main__":
