@@ -8,56 +8,56 @@
 	<form class="col s12" method="POST" action="{{ url_for('edit_fund', client_coverage_id=fund._id) }}">
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="client" type="text" name="client" class="validate">
+				<input id="client" type="text" name="client"  value="{{ fund.client }}" class="validate">
 				<label for="client">Client</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="fund_name" type="text" name="fund_name" class="validate">
+				<input id="fund_name" type="text" name="fund_name" value="{{ fund.fund_name }}" class="validate">
 				<label for="fund_name">Fund Name</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="fund_number" name="fund_number" type="number" class="validate">
+				<input id="fund_number" name="fund_number" type="number" value="{{ fund.fund_number }}" class="validate">
 				<label for="fund_number">Account Number </label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="owner" name="owner" type="text" class="validate">
+				<input id="owner" name="owner" type="text" value="{{ fund.owner }}" class="validate">
 				<label for="owner">Owner</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="first_cover" name="first_cover" type="text" class="validate">
+				<input id="first_cover" name="first_cover" type="text" value="{{ fund.first_cover }}" class="validate">
 				<label for="first_cover">First Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="second_cover" name="second_cover" type="text" class="validate">
+				<input id="second_cover" name="second_cover" type="text" value="{{ fund.second_cover }}" class="validate">
 				<label for="second_cover">Second Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="third_cover" name="third_cover" type="text" class="validate">
+				<input id="third_cover" name="third_cover" type="text" value="{{ fund.third_cover }}" class="validate">
 				<label for="third_cover">Third Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="contingency" name="contingency" type="text" class="validate">
+				<input id="contingency" name="contingency" type="text" value="{{ fund.contingency }}" class="validate">
 				<label for="contingency">Contingency</label>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="deadline" name="deadline" type="time" class="validate">
+				<input id="deadline" name="deadline" type="time" value="{{ fund.deadline }}" class="validate">
 				<label for="deadline">Deadline</label>
 			</div>
 		</div>
@@ -75,7 +75,12 @@
 		</div>
 
 		<div class="row">
+        
 			<div class="col s12  center-align">
+             <a href="{{ url_for('get_rota') }}"   class="btn waves-effect waves-light" type="submit">Cancel
+                    <i class="material-icons right">cancel</i>
+                    </a>
+
 				<button class="btn waves-effect waves-light" type="submit">Edit Task
                     <i class="material-icons right">edit</i>
                 </button>
