@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit Fund</h3>
+
+<!--Adapted from Materialize-->
+
+	<form class="col s12" method="POST" action="{{ url_for('edit_fund', client_coverage_id=fund._id) }}">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="client" type="text" name="client" class="validate">
+				<label for="client">Client</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="fund_name" type="text" name="fund_name" class="validate">
+				<label for="fund_name">Fund Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="fund_number" name="fund_number" type="number" class="validate">
+				<label for="fund_number">Account Number </label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="owner" name="owner" type="text" class="validate">
+				<label for="owner">Owner</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="first_cover" name="first_cover" type="text" class="validate">
+				<label for="first_cover">First Cover</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="second_cover" name="second_cover" type="text" class="validate">
+				<label for="second_cover">Second Cover</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="third_cover" name="third_cover" type="text" class="validate">
+				<label for="third_cover">Third Cover</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="contingency" name="contingency" type="text" class="validate">
+				<label for="contingency">Contingency</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="deadline" name="deadline" type="time" class="validate">
+				<label for="deadline">Deadline</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				                <select>
+		                        <option value="" name="hols_followed">Choose your option</option>
+		                        <option value="1" name="Ireland">Ireland</option>
+		                        <option value="2" name="US">US</option>
+		                        <option value="3" name="UK">UK</option>
+		                        </select>
+				<label>Holidays Followed</label>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12  center-align">
+				<button class="btn waves-effect waves-light" type="submit">Edit Task
+                    <i class="material-icons right">edit</i>
+                </button>
+
+
+			</div>
+		</div>
+
+	</form>
+
+
+
+
+
+{% endblock %}

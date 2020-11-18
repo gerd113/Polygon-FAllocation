@@ -40,7 +40,15 @@ def add_fund():
         mongo.db.client_coverage.insert_one(fund)
         flash("Task Successfully Added")
         return render_template("allocation.html")
-    return render_template("add_fund.html")    
+    return render_template("add_fund.html")
+
+
+@app.route("/edit_fund/<client_coverage_id>", methods=["GET", "POST"])
+def edit_fund(client_coverage_id):
+    fund = mongo.db.client_coverage.find_one(
+        {"_id": ObjectId(client_coverage_id)})
+    return render_template(
+        "edit_fund.html", fund=fund)
 
 
 if __name__ == "__main__":
