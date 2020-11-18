@@ -45,6 +45,22 @@ def add_fund():
 
 @app.route("/edit_fund/<client_coverage_id>", methods=["GET", "POST"])
 def edit_fund(client_coverage_id):
+    if request.method == "POST":
+        submit = {
+            "client": request.form.get("client"),
+            "owner": request.form.get("owner"),
+            "fund_number": request.form.get("fund_number"),
+            "first_cover": request.form.get("first_cover"),
+            "second_cover": request.form.get("second_cover"),
+            "third_cover": request.form.get("third_cover"),
+            "contingency": request.form.get("contingency"),
+            "deadline": request.form.get("deadline")
+        }
+        mongo.db.client_coverage.update(
+            {"_id": ObjectId(client_coverage_id)}, submit)
+        flash("Task Successfully Updated")
+        
+
     fund = mongo.db.client_coverage.find_one(
         {"_id": ObjectId(client_coverage_id)})
     return render_template(
