@@ -72,6 +72,11 @@ def delete_fund(client_coverage_id):
     return redirect(url_for("get_rota"))
 
 
+@app.route("/annual_leave")
+def annual_leave():
+    return render_template("annual_leave.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
