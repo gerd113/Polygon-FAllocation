@@ -4,60 +4,60 @@
 <h3 class="center-align">Edit Fund</h3>
 
 <!--Adapted from Materialize-->
-
+<div class="container">
 	<form class="col s12" method="POST" action="{{ url_for('edit_fund', client_coverage_id=fund._id) }}">
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="client" type="text" name="client"  value="{{ fund.client }}" class="validate">
+				<input id="client" type="text" name="client"  value="{{ fund.client }}" class="validate" required>
 				<label for="client">Client</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="fund_name" type="text" name="fund_name" value="{{ fund.fund_name }}" class="validate">
+				<input id="fund_name" type="text" name="fund_name" value="{{ fund.fund_name }}" class="validate" required>
 				<label for="fund_name">Fund Name</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="fund_number" name="fund_number" type="number" value="{{ fund.fund_number }}" class="validate">
+				<input id="fund_number" name="fund_number" type="number" value="{{ fund.fund_number }}" class="validate" required>
 				<label for="fund_number">Account Number </label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="owner" name="owner" type="text" value="{{ fund.owner }}" class="validate">
+				<input id="owner" name="owner" type="text" value="{{ fund.owner }}" class="validate" required>
 				<label for="owner">Owner</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="first_cover" name="first_cover" type="text" value="{{ fund.first_cover }}" class="validate">
+				<input id="first_cover" name="first_cover" type="text" value="{{ fund.first_cover }}" class="validate" required>
 				<label for="first_cover">First Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="second_cover" name="second_cover" type="text" value="{{ fund.second_cover }}" class="validate">
+				<input id="second_cover" name="second_cover" type="text" value="{{ fund.second_cover }}" class="validate" required>
 				<label for="second_cover">Second Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="third_cover" name="third_cover" type="text" value="{{ fund.third_cover }}" class="validate">
+				<input id="third_cover" name="third_cover" type="text" value="{{ fund.third_cover }}" class="validate" required>
 				<label for="third_cover">Third Cover</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="contingency" name="contingency" type="text" value="{{ fund.contingency }}" class="validate">
+				<input id="contingency" name="contingency" type="text" value="{{ fund.contingency }}" class="validate" required>
 				<label for="contingency">Contingency</label>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="deadline" name="deadline" type="time" value="{{ fund.deadline }}" class="validate">
+				<input id="deadline" name="deadline" type="time" value="{{ fund.deadline }}" class="validate" required>
 				<label for="deadline">Deadline</label>
 			</div>
 		</div>
@@ -83,7 +83,7 @@
               <a href="{{ url_for('delete_fund', client_coverage_id=fund._id) }}"   class="btn waves-effect waves-light" type="submit">Delete Fund
                     <i class="material-icons right">delete</i>
                     </a>  
-				<button class="btn waves-effect waves-light" type="submit">Edit Fund
+				<button class="btn waves-effect waves-light" type="submit">Submit Changes
                     <i class="material-icons right">edit</i>
                 </button>
 
@@ -93,7 +93,7 @@
 
 	</form>
 
-
+</div>
 
 
 
