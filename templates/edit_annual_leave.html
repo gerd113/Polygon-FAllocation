@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit Annual Leave</h3>
+
+<!--Adapted from Materialize-->
+<div class="container">
+	<form class="col s12" method="POST" action="{{ url_for('edit_annual_leave', annual_leave_id=hols._id) }}">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="employee" type="text" name="employee" value="{{ hols.employee }}" class="validate" required>
+				<label for="employee">Employee</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="start_date" type="date" name="start_date" value="{{ hols.start_date }}"class="validate" required>
+				<label for="start_date">Start Date</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="end_date" name="end_date" value="{{ hols.end_date }}" type="date" class="validate" required>
+				<label for="end_date">End Date </label>
+			</div>
+		</div>
+		
+
+				<div class="row">
+
+					<div class="col s12  center-align">
+						<a href="{{ url_for('get_rota') }}" class="btn waves-effect waves-light" type="submit">Cancel
+							<i class="material-icons right">cancel</i>
+						</a>
+						<a href="{{ url_for('delete_fund', client_coverage_id=hols._id) }}"
+							class="btn waves-effect waves-light" type="submit">Delete Entry
+							<i class="material-icons right">delete</i>
+						</a>
+						<button class="btn waves-effect waves-light" type="submit">Submit Changes
+                    <i class="material-icons right">edit</i>
+                </button>
+
+
+					</div>
+				</div>
+
+	</form>
+
+</div>
+
+
+
+{% endblock %}

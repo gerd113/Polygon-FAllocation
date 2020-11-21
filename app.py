@@ -106,7 +106,24 @@ def add_leave():
 @app.route("/get_hols")
 def get_hols():
     hols = mongo.db.annual_leave.find()
-    return render_template("see_annual_leave.html", hols=hols)
+    return render_template("see_annual_leave_db_entries.html", hols=hols)
+
+
+@app.route("/edit_annual_leave/<annual_leave_id>", methods=["GET", "POST"])
+def edit_annual_leave(annual_leave_id):
+    if request.method == "POST":
+        submit = {
+            "employee": request.form.get("employee"),
+            "start_date": request.form.get("start_date"),
+            "end_date": request.form.get("end_date")
+        }
+        mongo.db.annual_leave.update(
+            {"_id": ObjectId(annual_leave_id)}, submit)
+        flash("Leave Updated. Pleae update Google Calendar")
+
+    hols = mongo.db.annual_leave.find_one({"_id": ObjectId(
+            annual_leave_id)})
+    return render_template("edit_annual_leave.html", hols=hols)
 
 
 if __name__ == "__main__":
