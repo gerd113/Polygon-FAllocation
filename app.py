@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+from flask_mail import Mail, Message
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -15,6 +16,17 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+app.config["MAIL_SERVER"] = 'smtp.gmail.com'
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_TLS"] = False
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_DEBUG"] = True
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
+
+mail = Mail(app)
 
 
 @app.route("/")
@@ -74,6 +86,20 @@ def delete_fund(client_coverage_id):
 
 @app.route("/annual_leave")
 def annual_leave():
+    return render_template("annual_leave.html")
+
+
+@app.route("/add_leave", methods=["GET", "POST"])
+def add_leave():
+    if request.method == "POST":
+        fund = {
+            "employee": request.form.get("employee"),
+            "start_date": request.form.get("start_date"),
+            "end_date": request.form.get("end_date"),
+        }
+        mongo.db.annual_leave.insert_one(fund)
+        flash("Leave Successfully Added. Please update Calendar")
+        return render_template("annual_leave.html")
     return render_template("annual_leave.html")
 
 
