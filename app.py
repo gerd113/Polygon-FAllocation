@@ -103,6 +103,11 @@ def add_leave():
     return render_template("annual_leave.html")
 
 
+@app.route("/get_hols")
+def get_hols():
+    hols = mongo.db.annual_leave.find()
+    return render_template("edit_annual_leave.html", hols=hols)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
