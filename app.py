@@ -126,6 +126,13 @@ def edit_annual_leave(annual_leave_id):
     return render_template("edit_annual_leave.html", hols=hols)
 
 
+@app.route("/delete_leave/<annual_leave_id>")
+def delete_leave(annual_leave_id):
+    mongo.db.annual_leave.remove({"_id": ObjectId(annual_leave_id)})
+    flash("Leave deleted. Please update calendar")
+    return redirect(url_for("get_hols"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

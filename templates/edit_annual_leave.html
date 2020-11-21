@@ -29,10 +29,10 @@
 				<div class="row">
 
 					<div class="col s12  center-align">
-						<a href="{{ url_for('get_rota') }}" class="btn waves-effect waves-light" type="submit">Cancel
+						<a href="{{ url_for('get_hols') }}" class="btn waves-effect waves-light" type="submit">Cancel
 							<i class="material-icons right">cancel</i>
 						</a>
-						<a href="{{ url_for('delete_fund', client_coverage_id=hols._id) }}"
+						<a href="{{ url_for('delete_leave', annual_leave_id=hols._id) }}"
 							class="btn waves-effect waves-light" type="submit">Delete Entry
 							<i class="material-icons right">delete</i>
 						</a>
