@@ -13,11 +13,11 @@
 		<li>
 	
 	
-			<div class="collapsible-header"><i class="material-icons"></i>{{ hol.employee }} {{ hol.start_date }}
+			<div class="collapsible-header">{{ hol.employee }} Start Date: {{ hol.start_date }}.
 	
-				{{ hol.end_date }}
+				End Date: {{ hol.end_date }}.
 	
-				<a href="{{ url_for('edit_annual_leave', annual_leave_id = hol._id) }}" class="waves-effect waves-light btn-small right-align"><i class="material-icons right">edit</i>Edit</a>
+				<a href="{{ url_for('edit_annual_leave', annual_leave_id = hol._id) }}" ><i class="material-icons right">edit</i></a>
 	
 			</div>
 	
