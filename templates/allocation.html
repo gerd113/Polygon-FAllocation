@@ -18,29 +18,32 @@
 	<ul class="collapsible">
 		{% for fund in rota %}
 		<li>
-	
-	
-			<div class="collapsible-header"><i class="material-icons"></i>{{ fund.client }} {{ fund.owner }}
-	
-				{{ fund.deadline }}
-	
-				<a href="{{ url_for('edit_fund', client_coverage_id=fund._id) }}" class="waves-effect waves-light btn-small right-align"><i class="material-icons right">edit</i>Edit</a>
-	
-			</div>
-	
+
+
+			<div class="collapsible-header"><strong>Client: {{ fund.client }}    Reviewer:    {{ fund.owner }}
+
+				Deadline:    {{ fund.deadline }}</strong>
 			
-	
-	
-			<div class="collapsible-body">
-				<span>Client Coverage: {{ fund.owner }}, {{ fund.first_cover }}, {{ fund.second_cover }}, {{ fund.third_cover }}</span><br>
-                <span>Hols: UK</span>
-			</div>
+
+				<a href="{{ url_for('edit_fund', client_coverage_id=fund._id) }}"
+					><i class="material-icons left">edit</i></a>
+
+</div>
+
+
+
+
+				<div class="collapsible-body">
+					<span>Client Coverage: {{ fund.owner }}, {{ fund.first_cover }}, {{ fund.second_cover }}, {{ fund.third_cover }}</span><br>
+					<span>Hols: UK</span>
+				</div>
+			
 		</li>
-	
-	
-	
+
+
+
 		{% endfor %}
-    
+
 	</ul>
-    </div>
+</div>
 {% endblock %}
