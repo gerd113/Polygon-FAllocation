@@ -100,7 +100,7 @@ def add_leave():
         }
         mongo.db.annual_leave.insert_one(fund)
         flash("Leave Successfully Added. Please update Calendar")
-        return render_template("see_annual_leave_db_entries.html")
+        return redirect(url_for("get_hols"))
     return render_template("see_annual_leave_db_entries.html")
 
 
