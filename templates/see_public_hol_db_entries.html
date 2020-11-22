@@ -37,22 +37,22 @@
 </div>
     <div class="container">
     
-	<form class="col s12" method="POST" action="{{ url_for('add_public_hol') }}">
+	<form class="col s12 annual_leave_form_space" method="POST" action="{{ url_for('add_public_hol') }}">
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="country" type="text" name="country" class="validate" required>
 				<label for="country">Country</label>
 			</div>
             
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="hol_date" type="date" name="hol_date"  class="validate"  required }>
 				<label for="hol_date">Date of Holiday</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="hol_name" name="hol_name" type="text" class="validate" required>
 				<label for="hol_name">Name of Holiday </label>
 			</div>
