@@ -100,8 +100,8 @@ def add_leave():
         }
         mongo.db.annual_leave.insert_one(fund)
         flash("Leave Successfully Added. Please update Calendar")
-        return render_template("annual_leave.html")
-    return render_template("annual_leave.html")
+        return render_template("see_annual_leave_db_entries.html")
+    return render_template("see_annual_leave_db_entries.html")
 
 
 @app.route("/get_hols")

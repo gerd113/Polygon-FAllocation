@@ -1,54 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container hide-on-small-and-down">
+<div class="container">
+<div class="col s12 hide-on-small-and-down">
 <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FDublin&amp;src=azV2OXRrNjIwazM4aDZjOGJqNW9lMjZkbm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=bXQ5N292ZGtuMHVxZzduMDlqMzY4YWpyMDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4uaXJpc2gjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4udWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23AD1457&amp;color=%23616161&amp;color=%230B8043&amp;color=%238E24AA&amp;color=%23F4511E&amp;showPrint=0&amp;showTabs=0&amp;title=Polygon%20FA%20Calendar" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<div class="container hide-on-med-and-up center-align">
+<div class="col s12 hide-on-med-and-up center-align">
 <iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FDublin&amp;src=azV2OXRrNjIwazM4aDZjOGJqNW9lMjZkbm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=bXQ5N292ZGtuMHVxZzduMDlqMzY4YWpyMDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4uaXJpc2gjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4udWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23AD1457&amp;color=%23616161&amp;color=%230B8043&amp;color=%238E24AA&amp;color=%23F4511E&amp;title=Polygon%20FA%20Calendar&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=1&amp;showTz=0" style="border:solid 1px #777" width="300" height="400" frameborder="0" scrolling="no"></iframe>
+
 </div>
 
-<div class="container">
-	<form class="col s4" method="POST" action="{{ url_for('add_leave') }}">
-		<div class="row">
-			<div class="input-field col s4">
-				<input id="employee" type="text" name="employee" class="validate" required>
-				<label for="employee">Employee</label>
+
+
+			<div class="container">
+				<div class="col s6  center-align">
+					<a href="{{ url_for('get_hols') }}" class="btn waves-effect waves-light" type="submit">Edit vacation in DB
+						<i class="material-icons right">edit</i></a>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s4">
-				<input id="start_date" type="date" name="start_date"  class="validate"  required }>
-				<label for="start_date"> Start Date</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s4">
-				<input id="end_date" name="end_date" type="date" class="validate" required>
-				<label for="end_date">End Date </label>
-			</div>
-		</div>
 
 
-
-		<div class="row">
-			<div class="col s4  center-align">
-            				<button class="btn waves-effect waves-light" type="submit">Add new entry to DB
-		                    <i class="material-icons right">send</i>
-		                </button>
-
-
-			</div>
-			<div class="col s4  center-align">
-				<a href="{{ url_for('get_hols') }}" class="btn waves-effect waves-light"
-					type="submit">Edit existing entry
-					<i class="material-icons right">edit</i></a>
-
-
-
-			</div>
-		</div>
-	</form>
-</div>
 {% endblock %}
