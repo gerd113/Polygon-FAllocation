@@ -7,63 +7,63 @@
 
 	<form class="col s12" method="POST" action="{{ url_for('add_fund') }}">
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="client" type="text" name="client" class="validate" required>
 				<label for="client">Client</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="fund_name" type="text" name="fund_name" class="validate" required>
 				<label for="fund_name">Fund Name</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="fund_number" name="fund_number" type="number" class="validate" required>
 				<label for="fund_number">Account Number </label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="owner" name="owner" type="text" class="validate"> required
 				<label for="owner">Owner</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="first_cover" name="first_cover" type="text" class="validate" required>
 				<label for="first_cover">First Cover</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="second_cover" name="second_cover" type="text" class="validate" required>
 				<label for="second_cover">Second Cover</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="third_cover" name="third_cover" type="text" class="validate" required>
 				<label for="third_cover">Third Cover</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="contingency" name="contingency" type="text" class="validate" required>
 				<label for="contingency">Contingency</label>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				<input id="deadline" name="deadline" type="time" class="validate" required>
 				<label for="deadline">Deadline</label>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s6 offset-s3">
 				                <select>
 		                        <option value="" name="hols_followed">Choose your option</option>
 		                        <option value="1" name="Ireland">Ireland</option>
@@ -75,7 +75,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col s12  center-align">
+			<div class="col s6 offset-s3  center-align">
 				<button class="btn waves-effect waves-light" type="submit">Submit
                     <i class="material-icons right">send</i>
                 </button>
