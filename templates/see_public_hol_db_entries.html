@@ -2,9 +2,9 @@
 {% block content %}
 
 
-
-
-
+<div class="container">
+<h4>Public Holidays in Database</h4>
+</div>
     
 
 <div class="container">
@@ -13,11 +13,11 @@
 		<li>
 	
 	
-			<div class="collapsible-header"><i class="material-icons"></i>{{ phol.country }} {{ phol.date }}
+			<div class="collapsible-header">Country: {{ phol.country }} Date: {{ phol.date }}
 	
 				
 	
-				<a href="{{ url_for('edit_public_hols', public_holidays_id = phol._id) }}" class="waves-effect waves-light btn-small right-align"><i class="material-icons right">edit</i>Edit</a>
+				<a href="{{ url_for('edit_public_hols', public_holidays_id = phol._id) }}" ><i class="material-icons right">edit</i></a>
 	
 			</div>
 	
