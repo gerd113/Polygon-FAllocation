@@ -126,7 +126,7 @@ def add_public_hol():
 
 @app.route("/get_public_hols")
 def get_public_hols():
-    phols = mongo.db.public_hols.find()
+    phols = mongo.db.public_holidays.find()
     return render_template("see_public_hol_db_entries.html", phols=phols)
 
 
@@ -152,6 +152,30 @@ def delete_leave(annual_leave_id):
     mongo.db.annual_leave.remove({"_id": ObjectId(annual_leave_id)})
     flash("Leave deleted. Please update calendar")
     return redirect(url_for("get_hols"))
+
+
+@app.route("/edit_public_hols/<public_holidays_id>", methods=["GET", "POST"])
+def edit_public_hols(public_holidays_id):
+    if request.method == "POST":
+        submit = {
+            "country": request.form.get("country"),
+            "hol_date": request.form.get("hol_date"),
+            "hol_name": request.form.get("hol_name")
+        }
+        mongo.db.public_holidays.update(
+            {"_id": ObjectId(public_holidays_id)}, submit)
+        flash("Public Holiday Updated.")
+
+    phols = mongo.db.public_holidays.find_one({"_id": ObjectId(
+            public_holidays_id)})
+    return render_template("edit_public_holidays.html", phols=phols)
+
+
+@app.route("/delete_public_hols/<public_holidays_id>")
+def delete_public_hols(public_holidays_id):
+    mongo.db.public_holidays.remove({"_id": ObjectId(public_holidays_id)})
+    flash("Public Hol deleted.")
+    return redirect(url_for("get_public_hols"))
 
 
 if __name__ == "__main__":

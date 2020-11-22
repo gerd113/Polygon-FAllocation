@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit Annual Leave</h3>
+
+<!--Adapted from Materialize-->
+<div class="container">
+	<form class="col s12" method="POST" action="{{ url_for('edit_public_hols', public_holidays_id=phols._id) }}">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="country" type="text" name="country" value="{{ phols.country }}" class="validate" required>
+				<label for="country">Country</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="hol_date" type="date" name="hol_date" value="{{ phols.hol_date }}" class="validate" required>
+				<label for="hol_date">Date of Holiday </label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="hol_name" name="hol_name" value="{{ phols.hol_name }}" type="text" class="validate" required>
+				<label for="hol_name"> Name of Holiday </label>
+			</div>
+		</div>
+		
+
+				<div class="row">
+
+					<div class="col s12  center-align">
+						<a href="{{ url_for('get_public_hols') }}" class="btn waves-effect waves-light" type="submit">Cancel
+							<i class="material-icons right">cancel</i>
+						</a>
+						<a href="{{ url_for('delete_public_hols', public_holidays_id=phols._id) }}"
+							class="btn waves-effect waves-light" type="submit">Delete Entry
+							<i class="material-icons right">delete</i>
+						</a>
+						<button class="btn waves-effect waves-light" type="submit">Submit Changes
+                    <i class="material-icons right">edit</i>
+                </button>
+
+
+					</div>
+				</div>
+
+	</form>
+
+</div>
+
+
+
+{% endblock %}
