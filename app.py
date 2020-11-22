@@ -110,6 +110,26 @@ def get_hols():
     return render_template("see_annual_leave_db_entries.html", hols=hols)
 
 
+@app.route("/add_public_hol", methods=["GET", "POST"])
+def add_public_hol():
+    if request.method == "POST":
+        fund = {
+            "country": request.form.get("country"),
+            "hol_date": request.form.get("hol_date"),
+            "hol_name": request.form.get("hol_name"),
+        }
+        mongo.db.public_holidays.insert_one(fund)
+        flash("Public Hol Successfully Added.")
+        return redirect(url_for("get_public_hols"))
+    return render_template("see_public_hol_db_entries.html")
+
+
+@app.route("/get_public_hols")
+def get_public_hols():
+    phols = mongo.db.public_hols.find()
+    return render_template("see_public_hol_db_entries.html", phols=phols)
+
+
 @app.route("/edit_annual_leave/<annual_leave_id>", methods=["GET", "POST"])
 def edit_annual_leave(annual_leave_id):
     if request.method == "POST":

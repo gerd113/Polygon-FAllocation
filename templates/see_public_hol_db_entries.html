@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+
+    
+
+<div class="container">
+	<ul class="collapsible">
+		{% for phol in phols %}
+		<li>
+	
+	
+			<div class="collapsible-header"><i class="material-icons"></i>{{ phol.country }} {{ phol.date }}
+	
+				
+	
+				<a href="{{ url_for('edit_annual_leave', annual_leave_id = hol._id) }}" class="waves-effect waves-light btn-small right-align"><i class="material-icons right">edit</i>Edit</a>
+	
+			</div>
+	
+			
+	
+	
+			<div class="collapsible-body">
+				
+			</div>
+		</li>
+	
+	
+	
+		{% endfor %}
+    
+	</ul>
+</div>
+    <div class="container">
+    
+	<form class="col s12" method="POST" action="{{ url_for('add_public_hol') }}">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="country" type="text" name="country" class="validate" required>
+				<label for="country">Country</label>
+			</div>
+            
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="hol_date" type="date" name="hol_date"  class="validate"  required }>
+				<label for="hol_date">Date of Holiday</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="hol_name" name="hol_name" type="text" class="validate" required>
+				<label for="hol_name">Name of Holiday </label>
+			</div>
+		</div>
+
+        <div class="row">
+			<div class="col s12  center-align">
+            				<button class="btn waves-effect waves-light" type="submit">Add Public Hol to DB
+		                    <i class="material-icons right">send</i>
+		                </button>
+    
+{% endblock %}
